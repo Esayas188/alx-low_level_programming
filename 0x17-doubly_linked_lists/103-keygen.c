@@ -1,34 +1,17 @@
-#include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * find_listint_loop - finds the loop in a linked list
- * @head: linked list to search for
- *
- * Return: address of the node where the loop starts, or NULL
- */
-listint_t *find_listint_loop(listint_t *head)
+  * main - print the keygen of crackme5
+  * @argc: has the length of the arguments
+  * @argv: has the arguments
+  * Return: 0 to indicate a good working of the program
+  */
+
+int main(int argc, char **argv)
 {
-	listint_t *slow = head;
-	listint_t *fast = head;
-
-	if (!head)
-		return (NULL);
-
-	while (slow && fast && fast->next)
-	{
-		fast = fast->next->next;
-		slow = slow->next;
-		if (fast == slow)
-		{
-			slow = head;
-			while (slow != fast)
-			{
-				slow = slow->next;
-				fast = fast->next;
-			}
-			return (fast);
-		}
-	}
-
-	return (NULL);
+	if (argc == 2)
+		printf("%s", argv[1]);
+	return (0);
+}
 }
